@@ -71,9 +71,27 @@ button {
 
 .image-thumb {
   position: relative;
+  overflow: hidden;
 }
 
-.image-thumb:before {
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-overlay:hover {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* .image-thumb:before { 
   display: inline-block;
   position: absolute;
   content: "";
@@ -81,16 +99,23 @@ button {
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
   opacity: 0;
-}
+}*/
 
-.filters-about {
+.project-info {
+  display: flex;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
   color: var(--primary-white-color);
   opacity: 0;
+  /* background-color: rgba(33, 150, 243, 0.9); */
+
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   margin-top: 0;
   margin-bottom: 0;
@@ -100,7 +125,12 @@ button {
   letter-spacing: 0.03em;
 }
 
-.flex-element:hover {
+.flex-element:hover .project-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* .flex-element:hover { 
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
 }
@@ -111,7 +141,7 @@ button {
 
 .flex-element:hover .image-thumb:before {
   opacity: 1;
-}
+}*/
 
 .card-info {
   background-color: var(--primary-white-color);

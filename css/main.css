@@ -98,11 +98,12 @@ img {
   text-decoration: none;
   letter-spacing: 0.02em;
 }
+
 .site-nav .current {
   color: var(--accent-color);
 }
 
-.site-nav-link .current:after {
+.site-nav .current:after {
   display: flex;
   content: "";
   position: absolute;
